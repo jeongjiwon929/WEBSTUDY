@@ -1,0 +1,47 @@
+http 모듈
+http 모듈 : Node.js의 가장 기본적인 웹 모듈이다. HTTP 웹 서버와 클라이언트를 생성하는 것과 관련된
+            모든 기능을 담당한다.
+1. server 객체
+1.1 메서드
+server.listen : 서버를 실행한다.
+server.close : 서버를 종료한다.
+
+1.2 이벤트
+server 객체에서 중요한 것은 이벤트다. server객체는 EventEmitter 객체를 기반으로 만들어졌다.
+당연히 이벤트를 연결할 수 있는 것이다.
+
+server.on('request', callback) : 클라이언트가 요청할 때 발생하는 이벤트
+server.on('connection', callback) : 클라이언트가 접속할 때 발생하는 이벤트
+server.on('close', callback) : 서버가 종료될 때 발생하는 이벤트
+server.on('checkContinue', callback) : 클라이언트가 지속적인 연결을 하고 있을 때 발생하는 이벤트
+server.on('clientError', callback) : 클라이언트에서 오류가 발생할 때 발생하는 이벤트
+
+2. response 객체
+클라이언트에 웹 페이지를 제공하려면 request 이벤트 리스너의 response 객체를 사용해 응답 메시지를 작성해야 한다.
+response.writeHead : 응답 헤더를 작성한다.
+response.end : 응답 본문을 작성한다.
+
+2.1 File System 모듈을 사용한 HTML 페이지 제공
+2.2 이미지와 음악 파일 제공
+2.3 쿠키
+키와 값이 들어있는 작은 데이터 조각이다.
+이름, 값, 파기 날짜, 경로를 포함하고 있다.
+2.4 페이지 강제 이동
+
+3. request 객체
+method : 클라이언트의 요청 방식을 나타낸다.
+url : 클라이언트가 요청한 URL을 나타낸다.
+headers : 요청 메시지 헤더를 나타낸다.
+trilers : 요청 메시지 트레일러를 나타낸다.
+httpVersion : HTTP 프로토콜 버전을 나타낸다.
+
+3.1 url 속성을 사용한 페이지 구분
+3.2 method 속성을 사용한 페이지 구분
+GET, POST, PUT, DELETE
+3.3 GET 요청 매개변수 추출
+클라이언트의 GET 요청시에는 보통 html 문서를 보여주면 된다.
+3.4 POST 요청 매개변수 추출
+POST 방식은 request 이벤트가 발생한 후 request 객체의 data 이벤트로 데이터가 전달된다.
+3.5 쿠키 추출
+쿠키는 request 객체의 headers 속성 안 cookie 속성에서 추출할 수 있다.
+

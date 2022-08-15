@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 숫자 !!</title>
+	<style>
+		button {
+			color:rgb(17, 58, 112);
+		}
+		body {
+			background-color:rgb(74, 139, 237);
+			margin-left : auto;
+			margin-right : auto;
+			padding : 100px 0px;
+		}
+	#form-commentInfo{
+    width: 100%;
+	
+}
+
+	#comment-count{
+    margin-bottom: 10px; 
+}
+
+	#comment-input{
+    width: 50%;
+    height: 3.3em;
+}
+
+	#submit{
+    background-color: rgb(0, 128,255);
+    width: 5.5em;
+    height: 3.3em;;
+    font-size: 15px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+	#voteUp, #voteDown{
+    width: 3.5em;
+    height: 1.9em;
+    background-color: aqua;    
+}
+
+	#comments{
+    margin-top: 10px;
+}
+
+	.eachComment{   
+    width :50%; 
+    margin: 10px;  
+    padding: 0.5em; 
+    border-bottom: 1px solid #c1bcba;
+}
+
+	.eachComment .name{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+	.eachComment .inputValue{
+    font-size: 1.2em;
+    font-style: italic;    
+}
+
+	.eachComment .time{
+    font-size: 0.7em;
+    color: #c1bcba;
+    font-style: oblique;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    
+}
+
+	.eachComment .voteDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+	.eachComment .deleteComment{
+    background-color: red;
+    color: aliceblue;
+}
+
+	</style>
+</head>
+<body>
+	<div style="text-align:center">
+	<h3>눌러보세요!</h3>
+	<a href="#"><img src="https://thredic.com/files/attach/images/302302/423/191/067/a53df310b1aadf9ef4c280630865f19d.jpg" style="width:200px; height:200px;" onclick="alert('start를 누르고 숫자를 기입하면 랜덤 숫자가 나옵니다!')"></a>
+	</div>
+	<div style="text-align:center">
+    <button>start!</button>
+    <h1>랜덤 숫자 뽑기</h1>
+	<p id="text">입력한 숫자 이내에서만 랜덤으로 나와요 ~!</p>
+	<button onclick="changeRedColor()">Red</button>
+	<button onclick="changeBlackColor()">black</button>
+	<div id="form-commentInfo">
+        <div id="comment-count">댓글 <span id="count">0</span></div>
+        <input id="comment-input" placeholder="댓글을 입력해 주세요.">
+        <button id="submit">등록</button>
+    </div>
+    <div id=comments>
+
+    </div>
+    <script src="index.js"></script>
+	
+	<script>
+		alert('저희 랜덤 숫자 뽑기에 방문 해주신 여러분 감사합니다.')
+		document.querySelector('button').onclick = () => window.open('project1.html', '', 'width=700, height=700')
+		var str = document.getElementById("text");
+		function changeRedColor() {
+			str.style.color = "red";
+		}
+		function changeBlackColor() {
+			str.style.color = "black";
+		}
+		
+	</script>
+	</div>
+</body>
+</html>
